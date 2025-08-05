@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Customer Assistant - Widget Demo</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .hero {
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .hero p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .feature-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .feature-card p {
+            color: #666;
+            margin: 0;
+        }
+        .cta-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .cta-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .cta-section p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .integration-code {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: left;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+        .btn:hover {
+            background: #5a6fd8;
+        }
+        .notice {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 20px 0;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>AI Customer Assistant</h1>
+            <p>Experience the power of AI-driven customer support. Try the chat widget in the bottom-right corner!</p>
+            <div class="notice">
+                <strong>Demo Mode:</strong> This widget is running in demo mode with simulated responses. 
+                In production, it would connect to your OpenAI API for intelligent responses.
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>AI-Powered Responses</h3>
+                <p>Leverage advanced AI models to provide intelligent, context-aware responses to customer inquiries.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Support</h3>
+                <p>Provide 24/7 customer support with instant responses, reducing wait times and improving satisfaction.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Customizable Design</h3>
+                <p>Easily customize colors, messages, and positioning to match your brand and website design.</p>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Easy Integration</h2>
+            <p>Add the AI Customer Assistant to your website with just a few lines of code:</p>
+            
+            <div class="integration-code">
+&lt;script&gt;
+  (function() {
+    var script = document.createElement('script');
+    script.src = 'https://your-domain.com/widget.js';
+    script.dataset.widgetId = 'your-widget-id';
+    script.dataset.primaryColor = '#667eea';
+    script.dataset.position = 'bottom-right';
+    script.dataset.welcomeMessage = 'Hello! How can I help you today?';
+    document.head.appendChild(script);
+  })();
+&lt;/script&gt;
+            </div>
+
+            <h3>Configuration Options</h3>
+            <ul style="text-align: left; max-width: 600px; margin: 0 auto;">
+                <li><strong>widgetId:</strong> Unique identifier for your widget</li>
+                <li><strong>primaryColor:</strong> Main color theme (hex color)</li>
+                <li><strong>position:</strong> Widget position (bottom-right, bottom-left)</li>
+                <li><strong>welcomeMessage:</strong> Initial greeting message</li>
+                <li><strong>apiUrl:</strong> Your API endpoint (optional)</li>
+            </ul>
+
+            <p style="margin-top: 30px;">
+                <a href="http://localhost:3000/admin" class="btn">Get Started</a>
+            </p>
+        </div>
+    </div>
+
+    <!-- AI Customer Assistant Widget -->
+    <script
+        src="/widget.js"
+        data-widget-id="demo-widget"
+        data-primary-color="#667eea"
+        data-position="bottom-right"
+        data-welcome-message="Hello! I'm your AI assistant. How can I help you today?"
+        data-api-url="http://localhost:3000">
+    </script>
+</body>
+</html>
